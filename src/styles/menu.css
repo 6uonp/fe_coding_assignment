@@ -1,0 +1,58 @@
+#menu__icon {
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  text-align: center;
+  font-weight: bold;
+  line-height: 100%;
+  position: relative;
+}
+
+#menu__dropdown {
+  width: 400px;
+  position: absolute;
+  visibility: hidden;
+  z-index: -1;
+  transform: translateY(-400px);
+}
+
+.menu__dropdown__item {
+  display: flex;
+  margin-top: 10px;
+  background-color: aqua;
+  height: 60px;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#menu__icon:focus {
+  background-color: red;
+}
+
+.hidden__check {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  z-index: 111;
+}
+
+.hidden__check:checked ~ #menu__icon {
+  background-color: red;
+}
+
+.hidden__check:checked ~ #menu__icon #menu__dropdown {
+  display: block;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: all 0.5s ease;
+}
+
+.menu__dropdown__item a {
+  text-decoration: none;
+}
